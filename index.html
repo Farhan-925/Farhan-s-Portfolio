@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+     
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-appear {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+
+  .flip-card {
+      perspective: 1000px;
+    }
+
+    .flip-inner {
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    </style>
+
+    <title>Farhan's Portfolio</title>
+</head>
+<body>
+    <header>
+<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="assets/media/logo.png" class="h-10" alt="Flowbite Logo">
+        
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
+      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+  </div>
+    <div class="items-center justify-evenly hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="#home" class="block py-2 px-3 text-white text-xl bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="#project" class="block py-2 px-3 text-gray-900 text-xl rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Projects</a>
+        </li>
+        <li>
+          <a href="#about" class="block py-2 px-3 text-gray-900 text-xl rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+        </li>
+        <li>
+            <a href="#skills" class="block py-2 px-3 text-gray-900 text-xl rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skills</a>
+          </li>
+          <li>
+            <a href="#services" class="block py-2 px-3 text-gray-900 text-xl rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+          </li>
+          <li>
+            <a href="#contact" class="block py-2 px-3 text-gray-900 text-xl rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+          </li>
+        
+      </ul>
+    </div>
+    </div>
+  </nav>
+    </header>
+    <main class="bg-[#0a0a1a]">
+     <section id="home" class="flex flex-col-reverse md:flex-row items-center justify-evenly h-auto md:h-screen pt-24 bg-[#0a0a1a] ">
+        
+          <div class="w-full md:w-3/6 text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl bg-gradient-to-b from-amber-500 via-blue-400 to-blue-800 bg-clip-text text-transparent">Frontend developer</h1>
+            <p class="mt-4 md:mt-8 text-white text-lg md:text-2xl w-full md:w-3/4 mx-auto md:mx-0 ">
+              I'm Farhan-<span  class="bg-gradient-to-b from-amber-500 via-blue-400 to-blue-800 bg-clip-text text-transparent">web-developer</span> 
+              with a passion for creating beautiful and responsive websites
+            </p>
+            <button class="relative group px-6 py-2 text-white text-lg font-semibold rounded-lg border-2 border-transparent bg-gradient-to-r from-amber-400 to-blue-800 hover:from-blue-800 hover:to-amber-400 mt-8 md:mt-8 w-full md:w-auto overflow-hidden">
+              <span class="absolute inset-0 bg-[#0a0a1a] rounded-lg transition-all duration-300 group-hover:opacity-0"></span>
+              <span class="relative z-10 bg-gradient-to-b from-amber-500 via-blue-400 to-blue-800 bg-clip-text text-transparent">Download CV</span>
+            </button>
+            
+            
+          </div>
+          <div class="relative w-full md:w-1/3 flex justify-center">
+            <!-- Background Boxes -->
+            <div class="absolute w-[80%] h-[300px] sm:h-[350px] md:h-[400px] rounded-[40px] bg-white/5 shadow-[5px_5px_15px_rgba(0,0,0,0.3)] -rotate-8 -top-[15px] left-[10px] animate-appear"></div>
+            <div class="absolute w-[80%] h-[300px] sm:h-[350px] md:h-[400px] rounded-[40px] bg-white/5 shadow-[5px_5px_15px_rgba(0,0,0,0.3)] -rotate-[20deg] -top-[15px] left-[10px] animate-appear"></div>
+
+        
+            <!-- Card -->
+            <div class="relative group w-[80%] h-[250px] md:h-[380px] rounded-[20px] overflow-hidden shadow-[10px_10px_30px_rgba(0,0,0,0.5)]  transition-transform duration-300 hover:scale-105 hover:-translate-y-2 ">
+              <img src="assets/media/profile.jpg" alt="Crypto Art" class="\w-full h-full rounded-[15px] animate-appear" />
+              <div class="overlay absolute left-0 bottom-0 h-0 w-full bg-[linear-gradient(to_bottom,transparent,_#1c1c1c_58%)] flex items-center justify-center flex-col px-4 text-center overflow-hidden transition-[height] duration-500 group-hover:h-[70%]">
+                <h1 class="bg-gradient-to-b from-amber-500 via-blue-400 to-blue-800 bg-clip-text text-transparent font-medium text-3xl">Farhan Ayub</h1>
+                <p class="text-white mt-2">"Crafting visually stunning, interactive websites with HTML, CSS, and JavaScript, blending creativity and functionality for seamless user experiences."
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <section id="project">
+        <h1 class="text-center font-medium text-4xl md:text-6xl bg-gradient-to-b from-amber-500 via-blue-400 to-blue-800 bg-clip-text text-transparent">Projects</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6  md:p-20 ">
+        <div class="relative h-[60vh] rounded-lg overflow-hidden cursor-pointer group animate-appear">
+          <div class="w-full h-full">
+            <img
+              src="assets/media/p1.png"
+              alt=""
+              class="w-full h-full object-cover object-[50%_90%] rounded-lg transition duration-500 ease-in-out group-hover:opacity-30 group-hover:grayscale group-hover:brightness-50"
+            />
+          </div>
+          <div class="absolute inset-5 border-2 border-white rounded-lg opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out bg-black/30"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h2 class="text-white text-xl font-semibold">Awesome Portfolio</h2>
+            <p class="text-white mt-2 text-sm">Awesome Portfolio website made by using html, Css and js</p>
+          </div>
+        </div>
+        <div class="relative h-[60vh] rounded-lg overflow-hidden cursor-pointer group animate-appear">
+          <div class="w-full h-full">
+            <img
+              src="assets/media/p5.avif"
+              alt=""
+              class="w-full h-full object-cover object-[50%_90%] rounded-lg transition duration-500 ease-in-out group-hover:opacity-30 group-hover:grayscale group-hover:brightness-50"
+            />
+          </div>
+          <div class="absolute inset-5 border-2 border-white rounded-lg opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out bg-black/30"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h2 class="text-white text-xl font-semibold">Entrepreneurship</h2>
+            <p class="text-white mt-2 text-sm">Entrepreneur website made by using HTML, CSS and JavaScript</p>
+          </div>
+        </div>
+        <div class="relative h-[60vh] rounded-lg overflow-hidden cursor-pointer group animate-appear">
+          <div class="w-full h-full">
+            <img
+              src="assets/media/p7.jpg"
+              alt=""
+              class="w-full h-full object-cover object-[50%_90%] rounded-lg transition duration-500 ease-in-out group-hover:opacity-30 group-hover:grayscale group-hover:brightness-50"
+            />
+          </div>
+          <div class="absolute inset-5 border-2 border-white rounded-lg opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out bg-black/30"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h2 class="text-white text-xl font-semibold">Photo World</h2>
+            <p class="text-white mt-2 text-sm">Photographic website made by using HTML, CSS and JavaScript</p>
+          </div>
+        </div>
+        <div class="relative h-[60vh] rounded-lg overflow-hidden cursor-pointer group animate-appear">
+          <div class="w-full h-full">
+            <img
+              src="assets/media/p3.webp"
+              alt=""
+              class="w-full h-full object-cover object-[50%_90%] rounded-lg transition duration-500 ease-in-out group-hover:opacity-30 group-hover:grayscale group-hover:brightness-50"
+            />
+          </div>
+          <div class="absolute inset-5 border-2 border-white rounded-lg opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out bg-black/30"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h2 class="text-white text-xl font-semibold">My Works</h2>
+            <p class="text-white mt-2 text-sm">Work website made by using HTML, CSS and JavaScript</p>
+          </div>
+        </div>
+        <div class="relative h-[60vh] rounded-lg overflow-hidden cursor-pointer group animate-appear">
+          <div class="w-full h-full">
+            <img
+              src="assets/media/p4.avif"
+              alt=""
+              class="w-full h-full object-cover object-[50%_90%] rounded-lg transition duration-500 ease-in-out group-hover:opacity-30 group-hover:grayscale group-hover:brightness-50"
+            />
+          </div>
+          <div class="absolute inset-5 border-2 border-white rounded-lg opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out bg-black/30"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h2 class="text-white text-xl font-semibold">Portfolio</h2>
+            <p class="text-white mt-2 text-sm">Portfolio website made by using HTML, CSS and JavaScript</p>
+          </div>
+        </div>
+        <div class="relative h-[60vh] rounded-lg overflow-hidden cursor-pointer group animate-appear">
+          <div class="w-full h-full">
+            <img
+              src="assets/media/p6.jpg"
+              alt=""
+              class="w-full h-full object-cover object-[50%_90%] rounded-lg transition duration-500 ease-in-out group-hover:opacity-30 group-hover:grayscale group-hover:brightness-50"
+            />
+          </div>
+          <div class="absolute inset-5 border-2 border-white rounded-lg opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out bg-black/30"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h2 class="text-white text-xl font-semibold">Success Progressive</h2>
+            <p class="text-white mt-2 text-sm">Netflix website made by using HTML, CSS and JavaScript</p>
+          </div>
+        </div>
+
+
+    </div>
+
+  </section>
+  
+  <section id="about" class="p-6 md:p-20" >
+    <h1 class="bg-gradient-to-b from-amber-500 via-blue-400 to-blue-800 bg-clip-text text-transparent text-4xl md:text-6xl text-center     font-medium">About me</h1>
+    <div class=" flex flex-col md:flex-row items-center justify-between gap-10 py-20">
+    <div class="text-white text-center md:text-left w-full md:w-3/4 flex flex-col gap-3">
+      <h3 class="text-2xl md:text-4xl">Hello, I'm</h3>
+      <h1 class="text-4xl md:text-6xl">Farhan Ayub</h1>
+      <h2 class="text-2xl md:text-4xl">And I'm a <span class="text-blue-500">Web Developer!</span> </h2>
+      <p class="text-md md:text-lg my-1 md:my-2">I am a passionate Frontend Developer with expertise in crafting modern, responsive, and user-friendly web interfaces. My goal is to create seamless digital experiences that enhance user engagement and satisfaction</p>
+      <div class="text-2xl md:text-4xl flex justify-center md:justify-start gap-4 mt-2">
+        <a  href="#" class=" hover:text-blue-500"><i class="fa-brands fa-linkedin "></i></a>
+        <a class="mx-4 hover:text-blue-500" href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="hover:text-blue-500"><i class="fa-brands fa-square-instagram"></i></a>
+        <a class="ml-4 hover:text-blue-500" href="#"><i class="fa-brands fa-twitter"></i></a>
+
+      </div>
+    </div>
+
+    <div class="flex justify-center items-center  w-full">
+      <div class="flip-card w-3/4 max-w-[300px] h-[250px] md:h-[380px]">
+        <div class="flip-inner relative w-full h-full text-center">
+          
+          <!-- Front Side -->
+          <div class="flip-card-front absolute w-full h-full bg-beige text-red border  rounded-xl flex flex-col items-center justify-center">
+           <img src="assets/media/profile.jpg" alt="profile" class="w-full h-full object-cover rounded-xl">
+            
+          </div>
+          
+          <!-- Back Side -->
+          <div class="flip-card-back absolute w-full h-full bg-yellow-400 text-red border  rounded-xl flex flex-col items-center justify-center gap-2">
+            <p class="text-4xl font-bold ">Farhan</p>
+            <p class="font-medium text-2xl">I'm Web Developer</p>
+            <div class="text-xl md:text-2xl">
+              <a  href="#" class="hover:text-blue-500"><i class="fa-brands fa-linkedin"></i></a>
+              <a class="mx-2 hover:text-blue-500" href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="hover:text-blue-500"><i class="fa-brands fa-square-instagram"></i></a>
+              <a class="ml-2 hover:text-blue-500" href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <a href="#"><button type="button" class="mt-12 px-6 py-1 text-black text-lg font-bold rounded-lg border-2 bg-white">Resume</button></a>
+          </div>
+    
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  </section>
+  <section id="skills" class="px-6 md:px-20">
+    <h1 class="text-center text-4xl md:text-6xl bg-gradient-to-b from-amber-500 via-blue-400 to-blue-800 bg-clip-text text-transparent font-medium">My Skills</h1>
+    <p class="text-center text-white px-10 md:px-30 py-8">I specialize in modern web technologies, creating responsive and user-friendly interfaces. My skills ensure clean, efficient code and seamless digital experiences across all screen sizes and platforms.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+      <div class="w-full max-w-md mx-auto my-2 md:my-6">
+        <div class="flex justify-between mb-1">
+          <p class="text-white font-medium">Html</p>
+          <p class="text-white font-medium">95%</p>
+        </div>
+        <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+          <div class="h-full bg-lime-500 rounded-full w-[95%]"></div>
+        </div>
+      </div>
+
+      <div class="w-full max-w-md mx-auto my-2 md:my-6">
+        <div class="flex justify-between mb-1">
+          <p class="text-white font-medium"> CSS</p>
+          <p class="text-white font-medium">85%</p>
+        </div>
+        <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+          <div class="h-full bg-lime-500 rounded-full w-[85%]"></div>
+        </div>
+      </div>
+
+      <div class="w-full max-w-md mx-auto my-2 md:my-6">
+        <div class="flex justify-between mb-1">
+          <p class="text-white font-medium">Bootstrap</p>
+          <p class="text-white font-medium">90%</p>
+        </div>
+        <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+          <div class="w-[90%] h-full bg-lime-500 rounded-full"></div>
+        </div>
+      </div> 
+
+      <div class="w-full max-w-md mx-auto my-2 md:my-6">
+        <div class="flex justify-between mb-1">
+          <p class="text-white font-medium">Tailwind</p>
+          <p class="text-white font-medium">90%</p>
+        </div>
+        <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+          <div class="w-[90%] h-full bg-lime-500 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="w-full max-w-md mx-auto my-2 md:my-6">
+        <div class="flex justify-between mb-1">
+          <p class="text-white font-medium">JavaScript</p>
+          <p class="text-white font-medium">75%</p>
+        </div>
+        <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+          <div class="w-[75%] h-full bg-lime-500 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="w-full max-w-md mx-auto my-2 md:my-6">
+        <div class="flex justify-between mb-1">
+          <p class="text-white font-medium">React</p>
+          <p class="text-white font-medium">70%</p>
+        </div>
+        <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+          <div class="w-[70%] h-full bg-lime-500 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="w-full max-w-md mx-auto my-2 md:my-6">
+        <div class="flex justify-between mb-1">
+          <p class="text-white font-medium">SQL</p>
+          <p class="text-white font-medium">72%</p>
+        </div>
+        <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+          <div class="w-[72%] h-full bg-lime-500 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="w-full max-w-md mx-auto my-2 md:my-6 ">
+        <div class="flex justify-between mb-1">
+          <p class="text-white font-medium">Java</p>
+          <p class="text-white font-medium">80%</p>
+        </div>
+        <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+          <div class="w-[80%] h-full bg-lime-500 rounded-full"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <section id="services" class="services p-6 md:p-20">
+    <h1 class="text-4xl md:text-6xl bg-gradient-to-b from-amber-500 via-blue-400 to-blue-800 bg-clip-text text-transparent text-center font-medium mb-8">My Services</h1>
+    <div class=" text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card flex flex-col items-center bg-gray-700 p-6 gap-6 w-full lg:w-[80%] animate-appear">
+        <div><a href="#" class="text-5xl font-medium text-blue-500"><i class="fa-brands fa-html5"></i></a></div>
+        <h1 class="text-2xl font-medium">Web Developement</h1>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum totam cum quaerat! Pariatur laboriosam sunt eius quisquam suscipit. Nihil, at architecto </p>
+        <button type="button" class="rounded-xl bg-blue-500 px-3 py-1.5 mt-4">Read More</button>
+      </div>
+
+      <div class="card flex flex-col items-center bg-gray-700 p-6 gap-6 w-full lg:w-[80%] animate-appear">
+        <div><a href="#" class="text-5xl font-medium text-blue-500"><i class="fa-solid fa-video"></i></a></div>
+        <h1 class="text-2xl font-medium">Video Editing</h1>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum totam cum quaerat! Pariatur laboriosam sunt eius quisquam suscipit. Nihil, at architecto </p>
+        <button type="button" class="rounded-xl bg-blue-500 px-3 py-1.5 mt-4">Read More</button>
+      </div>
+
+      <div class="card flex flex-col items-center bg-gray-700 p-6 gap-6 w-full lg:w-[80%] animate-appear">
+        <div><a href="#" class="text-5xl font-medium text-blue-500"><i class="fa-solid fa-database"></i></a></div>
+        <h1 class="text-2xl font-medium">Database</h1>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum totam cum quaerat! Pariatur laboriosam sunt eius quisquam suscipit. Nihil, at architecto </p>
+        <button type="button" class="rounded-xl bg-blue-500 px-3 py-1.5 mt-4">Read More</button>
+      </div>
+
+      <div class="card flex flex-col items-center bg-gray-700 p-6 gap-6 w-full lg:w-[80%] animate-appear">
+        <div><a href="#" class="text-5xl font-medium text-blue-500"><i class="fa-brands fa-java"></i></a></div>
+        <h1 class="text-2xl font-medium">Java Projects</h1>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum totam cum quaerat! Pariatur laboriosam sunt eius quisquam suscipit. Nihil, at architecto </p>
+        <button type="button" class="rounded-xl bg-blue-500 px-3 py-1.5 mt-4">Read More</button>
+      </div>
+
+      <div class="card flex flex-col items-center bg-gray-700 p-6 gap-6 w-full lg:w-[80%] animate-appear">
+        <div><a href="#" class="text-5xl font-medium text-blue-500"><i class="fa-brands fa-js"></i></a></div>
+        <h1 class="text-2xl font-medium">JS Projects</h1>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum totam cum quaerat! Pariatur laboriosam sunt eius quisquam suscipit. Nihil, at architecto </p>
+        <button type="button" class="rounded-xl bg-blue-500 px-3 py-1.5 mt-4">Read More</button>
+      </div>
+
+      <div class="card flex flex-col items-center bg-gray-700 p-6 gap-6 w-full lg:w-[80%] animate-appear">
+        <div><a href="#" class="text-5xl font-medium text-blue-500"><i class="fa-brands fa-wordpress"></i></a></div>
+        <h1 class="text-2xl font-medium">Wordpress </h1>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum totam cum quaerat! Pariatur laboriosam sunt eius quisquam suscipit. Nihil, at architecto </p>
+        <button type="button" class="rounded-xl bg-blue-500 px-3 py-1.5 mt-4">Read More</button>
+      </div>
+
+    </div>
+
+  </section>
+  <section id="contact" class="px-6 md:px-20 pb:10 md:pb-20">
+    <h2 class="text-center text-white text-xl md:text-2xl ">Get In Touch</h2>
+    <h1 class="text-center bg-gradient-to-b from-amber-500 via-blue-400 to-blue-800 bg-clip-text text-transparent text-4xl md:text-6xl mb-16">Contact</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="flex flex-col gap-4 md:border-r-4 border-white">
+        <div class="flex items-center gap-4 bg-gray-800 p-4 w-[100%] md:w-[95%]  lg:w-[80%]"><a href="#" class="text-white text-xl lg:text-2xl "><i class="fa-solid fa-phone"></i></a>
+        <p class="text-white text-lg lg:text-xl">+923040373886</p>
+        </div>
+        <div class="flex items-center gap-4 bg-gray-800 p-4 w-[100%] md:w-[95%] lg:w-[80%]"><a href="#" class="text-white text-xl lg:text-2xl"><i class="fa-solid fa-envelope"></i></a>
+          <p class="text-white text-lg lg:text-xl">farhanayub915@gmail.com</p>
+          </div>
+          <div class="flex items-center gap-4 bg-gray-800 p-4 w-[100%] md:w-[95%] lg:w-[80%]"><a href="#" class="text-white text-xl lg:text-2xl"><i class="fa-solid fa-location-dot"></i></a>
+            <p class="text-white text-lg lg:text-xl">Bahawalpur, Pakistan</p>
+            </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center">
+        <form action="">
+          <div class="relative w-full my-6 border-b-4 border-white">
+            <input type="text" name="Name" id="name" required class="w-full h-[6vh] bg-transparent border-none outline-none text-white text-[1.2rem] px-8 pr-10 peer"
+            />
+            <label for="name" class="absolute left-5 top-1/2 -translate-y-1/2 text-[1.2rem] text-white transition-all peer-focus:top-[-5px] peer-valid:top-[-5px]"
+            > Enter Your Name ..  </label>
+            <i class="fa-solid fa-user absolute top-1/2 right-5 -translate-y-1/2 text-[1.2rem] text-white"></i>
+          </div>
+          <div class="relative w-full my-6 border-b-4 border-white">
+            <input type="password" name="Password" id="pass" required class="w-full h-[6vh] bg-transparent border-none outline-none text-white text-[1.2rem] px-8 pr-10 peer"
+            />
+            <label for="pass" class="absolute left-5 top-1/2 -translate-y-1/2 text-[1.2rem] text-white transition-all peer-focus:top-[-5px] peer-valid:top-[-5px]"
+            > Enter Your Password .. </label>
+            <i class="fa-solid fa-lock absolute top-1/2 right-5 -translate-y-1/2 text-[1.2rem] text-white"></i>
+          </div>
+          <div class="relative w-full my-6 border-b-4 border-white">
+            <textarea name="Message" id="message" required  rows="4" class="w-full bg-transparent border-none outline-none text-white text-[1.2rem] px-8 pr-10 pt-6 resize-none peer"
+            ></textarea>
+            <label for="message" class="absolute left-5 top-6 text-[1.2rem] text-white transition-all peer-focus:top-[-5px] peer-valid:top-[-5px]"
+            >  Enter Your Message .. </label>
+            <i class="fa-solid fa-comment absolute top-6 right-5 text-[1.2rem] text-white pointer-events-none"></i>
+          </div>
+          <a href="#" class="text-center"><button type="button" class="bg-white rounded-xl px-4 py-2 font-medium">Send</button></a>
+          
+        </form>
+      </div>
+
+
+    </div>
+
+  </section>
+
+    </main>
+
+    <footer id="">
+      <div class="grid grid-cols-1 md:grid-cols-3 py-10 px-6 md:px-20 gap-6 text-white bg-[#05050f]">
+        <div class="">
+          <h1 class="text-xl font-medium">About</h1>
+          <p class="text-sm pr-4">I'm a passionate web developer skilled in building responsive, user-friendly websites and web apps. With expertise in HTML, CSS, JavaScript, and modern frameworks, I turn ideas into interactive digital experiences. I enjoy solving problems through code and continuously learning to stay ahead in the tech world.</p>
+        </div>
+        <div class=" flex flex-col ">
+          <h1 class="text-xl font-medium">Links</h1>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#project">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#skills">Skills</a>
+          <a href="contact">Contact</a>
+        </div>
+        <div class="">
+          <h1 class="text-xl font-medium">Have A Question?</h1>
+          <p><i class="fa-solid fa-phone"></i> +923040373886</p>
+          <p><i class="fa-solid fa-envelope"></i> farhanayub915@gmail.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Bahawalpur, Pakistan</p>
+          <div class="text-2xl flex justify-center md:justify-start gap-2 mt-2">
+            <a  href="#" class="hover:text-blue-500"><i class="fa-brands fa-linkedin "></i></a>
+            <a class="mx-2 hover:text-blue-500" href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="hover:text-blue-500"><i class="fa-brands fa-square-instagram"></i></a>
+            <a class="ml-2 hover:text-blue-500" href="#"><i class="fa-brands fa-twitter"></i></a>
+    
+          </div>
+        </div>
+
+
+      </div>
+
+    </footer>
+
+
+</body>
+</html>
